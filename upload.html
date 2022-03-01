@@ -1,40 +1,40 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Image Upload Example</title>
-    <link rel="stylesheet" href="style.css">
-</head>
+<html>
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<style>
+.middle {
+  position: absolute; left: 50%; top: 50%; 
+  transform: translate(-50%, -50%); text-align: center;
+}
+</style>
+<style>
+.file_input label {position:relative; cursor:pointer; display:inline-block; vertical-align:middle; overflow:hidden; width:100px; height:30px; background:#33cc33; color:#000000; text-align:center; line-height:30px;}
+.file_input label input {position:absolute; width:0; height:0; overflow:hidden;}
+.file_input input[type=text] {vertical-align:middle; display:inline-block; width:400px; height:28px; line-height:28px; font-size:11px; padding:0; border:0; border:1px solid #777;}
+</style>
 <body>
-    <div class="container">
-        <div class="image-upload" id="image-upload">
-
-            <form action="https://ronyanfucking.000webhostapp.com/RandomImage/uploads.php" method="post" enctype="multipart/form-data" onsubmit="return showImage(this);">
-                <div class="button">
-                    <label for="chooseFile">
-                        👉 CLICK HERE! 👈
-                    </label>
-                </div>
-                <input type="file" id="chooseFile" name="chooseFile" accept="image/*" onchange="loadFile(this)">
-            
-
-            <div class="fileContainer">
-                <div class="fileInput">
-                    <p>FILE NAME: </p>
-                    <p id="fileName"></p>
-                </div>
-                <div class="buttonContainer">
-                    <div class="submitButton" id="submitButton">SUBMIT</div>
-                </div>
-            </div>
-        </div>
-        
-        <div class="image-show" id="image-show"></div>
+<div class="middle">
+<h1>원펀맨 갤러리 이미지 저장소</h1>
+<hr>
+<br>
+<form action="uploads.php" method="post" enctype="multipart/form-data">
+    서버에 업로드 할 이미지를 선택해 주세요.<br>png, jpg, jpeg, gif 포맷의 파일만 가능합니다.
+    <br>
+    <br>
+    <div class="file_input">
+    <input type="text" readonly="readonly" id="file_route">
+    <br>
+    <br>
+    <label>
+    파일 선택
+    <input type="file" onchange="javascript:document.getElementById('file_route').value=this.value" name="fileToUpload" id="fileToUpload">
+    </label>
     </div>
-
-    <script src="index.js"></script>
+    <br>
+    <br>
+    <input type="IMAGE" src="up.png" name="submit" value="Upload Image">
+    
 </form>
+</div>
 </body>
 </html>
